@@ -24,15 +24,9 @@
  */
 .msgpopup-container {
 	position: fixed;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: flex-end;
-	align-content: flex-end;
-	align-items: flex-end;
 	right: 0;
-	top: auto;
 	width: 350px;
-	bottom: 0;
+	bottom: 5px;
 	z-index: 999;
 }
 .msgpopup-container .msgpopup-box-clone-output {
@@ -82,7 +76,7 @@
 }
 
 .msgpopup-theme-default .msgpopup-wrap {
-	padding: 5px 10px 0 0;
+	padding: 5px 10px 0 10px;
 	margin-bottom: 7px;
 }
 .msgpopup-theme-default .msgpopup-content {
@@ -103,8 +97,8 @@
 	background: #F9FFFA;
 }
 .msgpopup-theme-default .msgpopup-error {
-	color: #FFF;
-	background: #CA1C3B;
+	color: #E11919;
+	background: #FFF7F7;
 }
 .msgpopup-theme-default .msgpopup-info {
 	color: #31BFDB;

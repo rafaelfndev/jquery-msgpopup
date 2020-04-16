@@ -1,17 +1,19 @@
 ;(function($) {
 
-	$.fn.messagePopup = function( options ){
+	$.fn.msgpopup = function( options ){
 
 		var opt = $.extend({
 			text: '',
 			type: 'normal',
-			time: 7000,
+			time: 5000,
 			class: '',
 			x: true,
 			removeContainerOnClose: false,
 			containerCheckItemBeforeRemove: true,
 			success: null,
 			id: false,
+			scrollToBottomOnNewMessages: true,
+			custom: false,
 
 			closeFunc: true,
 			mouseoverFunc: false,
@@ -159,17 +161,42 @@
 			.find('['+opt.boxTextData+']')
 			.html(opt.text);
 
-			// Define attributes to clone
+			// Custom doesn't have default class
+			if(opt.custom) {
+				msgClone
+				.find('['+opt.itemData+']')
+				.removeClass(opt.itemClass)
+				.removeClass(opt.defaultTypeClass)
+				.find('['+opt.boxContentData+']')
+				.removeClass(opt.boxContentClass)
+			} else {
+				msgClone
+				.find('['+opt.itemData+']')
+				.addClass((opt.defaultTypeClass === false ? '' : opt.defaultTypeClass)+' msgpopup-'+msgType+' '+msgType);
+			}
+
+			// Config to cloned
 			msgClone
 			.removeAttr(opt.elToCloneData)
 			.attr('data-msgpopup-id', (opt.id ? opt.id : ''))
 			.appendTo('['+opt.boxCloneOutputData+']')
 			.slideDown()
 			.removeClass('msgpopup-clone')
-			.find('['+opt.wrapData+']')
-			.addClass(opt.wrapVisibleClass)
 			.find('['+opt.itemData+']')
-			.addClass((opt.defaultTypeClass === false ? '' : opt.defaultTypeClass)+' msgpopup-'+msgType+' '+opt.class);
+			.addClass(opt.class);
+
+			// Finally, show :)
+			msgClone
+			.find('['+opt.wrapData+']')
+			.addClass(opt.wrapVisibleClass);
+
+			// Scroll to bottom if overflow
+			if(opt.scrollToBottomOnNewMessages) {
+				var container = $('['+opt.boxCloneOutputData+']');
+				container.stop().animate({
+					scrollTop: container.prop('scrollHeight')
+				}, null);
+			}
 
 			// Close func
 			if(opt.closeFunc) {
