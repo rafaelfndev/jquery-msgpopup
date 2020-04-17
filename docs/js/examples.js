@@ -1,7 +1,3 @@
-/**
- * Default examples
- * ----------------------------------------------------------------------------------
- */
 $('body').on('click', '[data-btn-click-me]', function(){
 	$().msgpopup({
 		text: 'Simple like that!',
@@ -72,8 +68,3 @@ $('body').on('click', '[data-btn-message="ok"]', function(){
 		type: 'info'
 	});
 });
-
-/**
- * Custom example
- * ----------------------------------------------------------------------------------
- */

@@ -12,7 +12,7 @@
 			containerCheckItemBeforeRemove: true,
 			success: null,
 			id: false,
-			scrollToBottomOnNewMessages: true,
+			scrollToBottomOnNewMessage: true,
 			custom: false,
 
 			closeFunc: true,
@@ -27,9 +27,9 @@
 			themeClass: 'msgpopup-theme-default',
 			defaultTypeClass: 'msgpopup-type',
 			wrapVisibleClass: 'msgpopup-wrap-visible',
-			elToCloneData: 'data-msgpopup-to-clone',
 			appendTo: 'body',
 
+			elToCloneData: 'data-msgpopup-to-clone',
 			containerData: 'data-msgpopup-container',
 			containerClass: 'msgpopup-container',
 			boxContentData: 'data-msgpopup-content',
@@ -191,7 +191,7 @@
 			.addClass(opt.wrapVisibleClass);
 
 			// Scroll to bottom if overflow
-			if(opt.scrollToBottomOnNewMessages) {
+			if(opt.scrollToBottomOnNewMessage) {
 				var container = $('['+opt.boxCloneOutputData+']');
 				container.stop().animate({
 					scrollTop: container.prop('scrollHeight')
