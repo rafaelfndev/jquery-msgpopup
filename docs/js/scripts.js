@@ -19,7 +19,7 @@ function templateCheckbox(obj) {
 			</span>\
 			<span>\
 				<span class="test-label">'+obj.key+'</span>\
-				<span class="test-description">'+obj.description+'</span>\
+				<span class="test-description">'+(obj.description != '' ? obj.description : '(not yet described)')+'</span>\
 			</span>\
 		</label>\
 	</div>';
@@ -263,3 +263,7 @@ function funcParameters() {
 }
 
 initParametersExamples();
+
+$('body').on('click', 'label', function(){
+	return false;
+});
