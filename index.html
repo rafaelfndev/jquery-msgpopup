@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Msg Popup</title>
+	<meta name="description" content="jQuery Msg Popup is a simple and elegant popup messages :)" />
+	<link rel="stylesheet" href="./docs/css/style.css" />
+	<link rel="stylesheet" href="./dist/jquery-msgpopup.css" />
+</head>
+<body>
+	<header class="top section">
+		<div class="base">
+			<div class="base-content">
+				<h1 class="title">
+					<div>Msg Popup</div>
+					<div class="obs">Simple and elegant popup messages :)</div>
+				</h1>
+				<div class="box example-buttons">
+					<button type="button" class="btn btn-normal" data-btn-click-me>Click me!</button>
+					<button type="button" class="btn btn-success" data-btn-header-example="success">Success</button>
+					<button type="button" class="btn btn-error" data-btn-header-example="error">Error</button>
+					<button type="button" class="btn btn-alert" data-btn-header-example="alert">Alert</button>
+					<button type="button" class="btn btn-info" data-btn-header-example="info">Info</button>
+				</div>
+				<div class="preview-custom-types">
+					<button type="button" class="btn btn-normal" data-btn-header-custom="type">Custom type class</button>
+					<button type="button" class="btn btn-normal" data-btn-header-custom="html">Custom HTML</button>
+					<button type="button" class="btn btn-normal" data-btn-header-custom="html-css">Custom HTHL and custom CSS</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="main">
+		<section class="section">
+			<div class="base">
+				<div class="base-content">
+					<h2 class="title-alt">
+						<div>Parameters</div>
+					</h2>
+					<div class="box">
+						<div class="test-parameters">
+							<div>
+								<div>Note: no one parameters is a callback, all functions is just executed before some action.</div>
+								<div class="box box-test-items" data-parameters="common">
+									<!-- js -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="base">
+				<div class="base-content">
+					<h2 class="title-alt">
+						<div>How to use</div>
+					</h2>
+					<div>
+						<p><a href="https://github.com/rafaelfndev/jquery-msgpopup" target="_blank">Download files</a> from <code>/dist</code> folder</p>
+						<div>Add files to your project:</div>
+					</div>
+					<div class="box">
+						<div>
+							<div>Style</div>
+							<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/dist/jquery-msgpopup.css&quot; /&gt;</code>
+						</div>
+						<div class="margin-t-15">
+							<div>Script</div>
+							<code>&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;script src=&quot;/dist/jquery-msgpopup.js&quot;&gt;&lt;/script&gt;</code>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="base">
+				<div class="base-content">
+					<h2 class="title-alt">
+						<div>Code example</div>
+					</h2>
+					<p>You can check some <a href="https://github.com/rafaelfndev/jquery-msgpopup/blob/master/docs/js/examples.js" target="_blank">examples here</a>.</p>
+
+					<h4>Simple usage</h4>
+					<div class="box">
+<div class="code">$().msgpopup({
+    text: 'Test message',
+});
+</div>
+					</div>
+
+					<h4>Some usage parameters</h4>
+					<div class="box">
+<div class="code">$().msgpopup({
+    text: 'Simple like that!',
+    success: true, // false
+    time: 5000, // or false
+    x: true, // or false
+});
+</div>
+					</div>
+
+					<h4>Define color of box</h4>
+					<div class="box">
+<div class="code">$().msgpopup({
+    text: 'Simple like that!',
+    type: 'info', // or success, error, alert and normal
+    time: 5000, // or false
+    x: true, // or false
+});
+</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section">
+			<div class="base">
+				<div class="base-content">
+					<h2 class="title-alt">
+						<div>Description of parameters</div>
+					</h2>
+					<table class="margin-t-15">
+						<thead>
+							<tr>
+								<th>Parameter</th>
+								<th>Type</th>
+								<th>Default value</th>
+								<th>Available parameters</th>
+								<th>Example</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>text</td>
+								<td><code>string</code></td>
+								<td><code>''</code></td>
+								<td></td>
+								<td><i>Put some text or HTML message</i></td>
+							</tr>
+
+							<tr>
+								<td>type</td>
+								<td><code>string</code></td>
+								<td>normal</td>
+								<td>
+									<code>normal</code>,
+									<code>info</code>,
+									<code>alert</code>,
+									<code>success</code>,
+									<code>error</code> or custom name that result on class
+									<code>msgpopup-your-custom-class</code>.
+								</td>
+								<td></td>
+							</tr>
+
+							<tr>
+								<td>closeFunc</td>
+								<td><code>function|bool</code></td>
+								<td><code>true</code></td>
+								<td><i>yourFunctionName</i> that receive one parameter</td>
+								<td>
+<div class="code">
+$().msgpopup({
+    text: 'Custom text',
+    closeFunc: '<code>myFunctionName</code>'
+});
+</div>
+<div class="code">
+<div class="opct-5">
+// Will be executed when
+// user close the message
+</div>function <code>myFunctionName</code>(param) {
+    console.log("param: ", param);
+}
+</div>
+								</td>
+							</tr>
+
+
+
+						</tbody>
+					</table>
+					<div class="margin-t-15"><i>Sorry, I need more time to documentation all D:</i></div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="section">
+		<div class="base">
+			<div class="base-content">
+				<h2 class="title-alt">Pay me something :)</h2>
+				<div class="donate">
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_s-xclick" />
+						<input type="hidden" name="hosted_button_id" value="BB7HGPRLNXDX6" />
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+						<img alt="" border="0" src="https://www.paypal.com/en_BR/i/scr/pixel.gif" width="1" height="1" />
+					</form>
+					<form action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
+						<input type="hidden" name="currency" value="BRL" />
+						<input type="hidden" name="receiverEmail" value="rafaelfndev@gmail.com" />
+						<input type="hidden" name="iot" value="button" />
+						<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/120x53-doar.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="./docs/js/jquery-1.12.4.min.js"></script>
+	<script src="./dist/jquery-msgpopup.js"></script>
+	<script src="./docs/js/examples.js"></script>
+	<script src="./docs/js/scripts.js"></script>
+</body>
+</html>
