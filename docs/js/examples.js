@@ -38,7 +38,7 @@ $('body').on('click', '[data-btn-header-custom="html-css"]', function(){
 	var someHtmlCode = '\
 	<div class="example-box-2">\
 		<h2 class="example-title-2">\
-			<span><img src="./images/check.png" alt="check" class="example-icon-2" /></span>\
+			<span><img src="./docs/images/check.png" alt="check" class="example-icon-2" /></span>\
 			<span>Need custom HTML?</span>\
 		</h2>\
 		<div class="example-content-2">This messages are wrapped into custom HTML, uses custom CSS, and doesn\'t have the standard item classes. You can customize it as you want.</div>\
