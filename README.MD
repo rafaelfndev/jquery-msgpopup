@@ -1,6 +1,6 @@
 # Getting started
 
-See jQuery Msg Popup in action [here](#).
+See jQuery Msg Popup in action [here](https://rafaelfndev.github.io/jquery-msgpopup/).
 
 ## Preview
 
